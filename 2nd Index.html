@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diep Voetspore - Online Jewellery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #5d4037; /* A deep, rich brown */
+            --secondary-color: #a1887f; /* A lighter, warm taupe */
+            --background-color: #f5f5f5; /* Light grey */
+            --light-text: #fff;
+            --dark-text: #333;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--dark-text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--background-color);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--dark-text);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080/e0e0e0/b3b3b3?text=Your+Hero+Image') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 2px solid var(--light-text);
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--light-text);
+            color: var(--primary-color);
+        }
+
+        /* Main Content Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        /* Product Gallery */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .product-card {
+            background-color: var(--light-text);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            font-weight: 300;
+            color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-content input, .contact-content textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-content button {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-content button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Diep Voetspore</div>
+        <nav>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Crafted with Soul, Worn with Story</h1>
+                <p>Discover our collection of handcrafted silver and gemstone jewelry, a testament to authenticity and art.</p>
+                <a href="#shop" class="cta-button">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="shop">
+            <h2>Our Collection</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400/ccc/fff?text=Product+1" alt="Silver and Turquoise Ring">
+                    <h3>Silver and Turquoise Ring</h3>
+                    <p>R 850</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400/ccc/fff?text=Product+2" alt="Handmade Leather Bracelet">
+                    <h3>Handmade Leather Bracelet</h3>
+                    <p>R 500</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400/ccc/fff?text=Product+3" alt="African Stone Earrings">
+                    <h3>African Stone Earrings</h3>
+                    <p>R 620</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x400/ccc/fff?text=Product+4" alt="Boho Silver Necklace">
+                    <h3>Boho Silver Necklace</h3>
+                    <p>R 950</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Diep Voetspore</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+                Diep Voetspore, which translates to "Deep Footprints," is a reflection of our journey as artisans. We are inspired by the raw beauty of the South African landscape and the stories it holds. Each piece is meticulously handcrafted from sterling silver and ethically sourced gemstones, ensuring a unique and meaningful connection for the wearer.
+            </p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+                We are committed to creating authentic, one-of-a-kind designs that are not just accessories, but a piece of art that you can carry with you. Our jewelry is made to last, just like the deep footprints we leave on our path.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Diep Voetspore. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
